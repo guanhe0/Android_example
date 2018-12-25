@@ -20,10 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View view){
         //Do something  in response to button
+        //this 和 Main2Activity 之间的Intent
         Intent intent = new Intent(this, Main2Activity.class);
+        //通过id找到EcitText 视图对象
         EditText editText = (EditText) findViewById(R.id.editText);
+        //获取EditText的文本,并转换为String类型
         String message = editText.getText().toString();
+        //EXTRA_MESSAGE 键名 message 键值
         intent.putExtra(EXTRA_MESSAGE, message);
+        //启动另一个activity,并传递intent对象
         startActivity(intent);
     }
 }
